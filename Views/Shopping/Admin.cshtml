@@ -1,0 +1,22 @@
+@model List<MvcRazorViews.ViewModels.LojaViewModel>
+
+@{
+    ViewData["Title"] = "Gerenciamento de lojas";
+}
+
+<h1>Nossas Lojas e quiosques</h1>
+
+@foreach(var loja in Model)
+{
+    <h3>@loja.Nome</h3>
+    <p>@loja.Tipo</p>
+    <a href="/Shopping/Show/@loja.Id">
+        <button>Ver detalhes</button>
+    </a>
+
+    <a href="/Shopping/Excluir/@loja.Id">
+        <button> Excluir Loja </button>
+    </a>
+    
+    <hr>
+}
